@@ -1,0 +1,114 @@
+/* Reset base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #121212;
+    color: #f5f5f5;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Contenitore principale */
+.container {
+    background: #1e1e1e;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+}
+
+/* Titoli */
+h1 {
+    color: chartreuse;
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+}
+
+h2 {
+    margin-bottom: 15px;
+    font-weight: 400;
+    font-size: 1.1rem;
+}
+
+/* Flash messages */
+.flash-messages {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.flash-messages li {
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Esempi categorie Flask flash */
+.success {
+    background: #1f7a1f;
+    color: white;
+}
+
+.error {
+    background: #a12626;
+    color: white;
+}
+
+.warning {
+    background: #d89b00;
+    color: black;
+}
+
+/* Form */
+form {
+    margin: 12px 0;
+}
+
+/* Pulsanti */
+.btn {
+    border: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: 0.2s ease-in-out;
+    min-width: 180px;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+.btn-danger {
+    background: #dc3545;
+    color: white;
+}
+
+.btn-success {
+    background: #28a745;
+    color: white;
+}
+
+.btn-primary {
+    background: #007bff;
+    color: white;
+}
+
+/* Link */
+a {
+    text-decoration: none;
+    display: inline-block;
+    margin: 8px 0;
+}

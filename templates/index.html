@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta author="seeker">
+    <meta description="Sito random">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <title>Website</title>
+</head>
+<body>
+    <div class="container">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul class="flash-messages">
+                    {% for category, message in messages %}
+                        <li class="{{ category }}">{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+
+        <h1>Website</h1>
+
+        {% if 'user_id' in session %}
+            <h2>Welcome, user ID: {{ user.id }}</h2>
+            <h2>E-Mail: {{ user.email }}</h2>
+
+            <form action="{{ url_for('logout') }}" method="post">
+                <input type="submit" class="btn btn-danger" value="Log Out">
+            </form>
+
+            <form action="{{ url_for('delete') }}" method="post">
+                <input type="submit" class="btn btn-danger" value="Delete Account">
+            </form>
+        {% else %}
+            <h2>Please log in or sign up.</h2>
+
+            <a href="{{ url_for('login') }}">
+                <button class="btn btn-success">Log In</button>
+            </a>
+
+            <a href="{{ url_for('signup') }}">
+                <button class="btn btn-primary">Sign Up</button>
+            </a>
+        {% endif %}
+    </div>
+</body>
+</html>

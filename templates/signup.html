@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta author="Julius">
+        <meta description="Sito random">
+        <link rel="stylesheet" href="../static/css/style.css">
+        <title>Sign Up</title>
+    </head>
+    <body style="text-align: center; align-items: center;">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul>
+                    {% for category, message in messages %}
+                        <li class="{{ category }}">{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+        <h1>Sign Up Page</h1>
+        <form action="{{ url_for('signup') }}" method="post">
+            <input type="email" placeholder="E-Mail" name="email"><br>
+            <input type="password" placeholder="Password (max. 50 characters)" name="password"><br>
+            <input type="password" placeholder="Repeat password" name="password2"><br>
+            <input type="submit" value="Sign Up"><br>
+            <a href="{{ url_for('login') }}"><h2>Already have an account? Log in.</h2></a>
+        </form>
+    </body>
+</html>
